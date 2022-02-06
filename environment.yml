@@ -1,0 +1,9 @@
+name: swm-nczarr-use-case
+channels:
+  - conda-forge
+dependencies:
+  - jupyterlab
+  - netCDF4
+  - python=3.9
+  - xarray
+  - zarr
