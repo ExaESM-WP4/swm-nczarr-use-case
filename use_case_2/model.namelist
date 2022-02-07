@@ -1,0 +1,57 @@
+&model_nl
+g = 7.5e-3
+ah = 5e3
+run_length = 1196553600
+dt = 7500
+meant_out = 262800.0
+diag_start = 0.0
+/
+
+&calendar_nl
+model_start = '1979-01-15 00:00'
+/
+
+&domain_nl
+a = 6371000.0
+omega = 7.272205e-05
+rho0 = 1024
+nx = 156
+ny = 81
+lon_s = -62.5
+lon_e = 15.0
+lat_s = -20.0
+lat_e = 20.0
+in_file_H = 'EA_05.nc'
+h_overwrite = 300.
+/
+
+&swm_forcing_nl
+filename = 'EA_05_ERA_INTERIM_TAU.nc'
+varname = 'TAUX'
+forcingtype = 'W'
+component = 'Z'
+/
+
+&swm_forcing_nl
+filename = 'EA_05_ERA_INTERIM_TAU.nc'
+varname = 'TAUX'
+forcingtype = 'W'
+component = 'M'
+/
+
+&swm_damping_nl type="sponge", term="GAMMA_LIN_U", value=2.5e-6, sl_location="NS", sl_length=2.5, sl_cutoff=3. /
+&swm_damping_nl type="sponge", term="GAMMA_LIN_V", value=2.5e-6, sl_location="NS", sl_length=2.5, sl_cutoff=3. /
+
+&diag_nl filename='u_out.nc' varname='U' type = 'A' period=2629800 /
+&diag_nl filename='v_out.nc' varname='V' type = 'A' period=2629800 /
+&diag_nl filename='eta_out.nc' varname='ETA' type = 'A' period=2629800 /
+&diag_nl filename='taux.nc' varname='F_X' type = 'A' period=2629800 /
+!&diag_nl filename='Hu.nc' varname='H_U' type = 'I' /
+!&diag_nl filename='Hv.nc' varname='H_V' type = 'I' /
+!&diag_nl filename='gamma_u.nc' varname='gamma_lin_u' type = 'I' period=2629800 /
+
+&output_nl
+oprefix = 'uc2_'
+osuffix = ''
+/
+

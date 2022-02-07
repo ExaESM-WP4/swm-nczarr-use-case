@@ -6,5 +6,6 @@ dependencies:
   - matplotlib
   - netCDF4
   - python=3.9
+  - requests
   - xarray
   - zarr
