@@ -306,6 +306,25 @@
   !nc_fletcher32 = .true.
 /
 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! Logging namelist
+!
+! Arguments:
+! ----------
+! file: string
+!     File name to write into. If the file already exists, the logging output will be
+!     appended to this file. The default is to log to stdout.
+! level: int
+!     The loglevel controls the verbosity of the output. Valid levels are
+!     1: errors
+!     2: warnings
+!     3: info (default)
+!     4: debug
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+&logging_nl
+  level = 3,
+  !file = "log.txt"
+/
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ! Diagnostics namelists
