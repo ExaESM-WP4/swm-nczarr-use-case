@@ -53,5 +53,11 @@ component = 'M'
 &output_nl
 oprefix = 'uc2_'
 osuffix = ''
+nc_cmode = "nf90_netcdf4", "nf90_classic_model",
+!nc_contiguous = 1
+!nc_chunksizes = 10, 10, 1,
+!nc_shuffle = .true.
+!nc_deflate_level=1
+!nc_fletcher32 = .true.
 /
 
