@@ -5,7 +5,7 @@ Change to the directory where the respective `model.namelist` file is located.
 Start the model using its [docker image](https://hub.docker.com/r/martinclaus/swm):
 
 ```bash
-docker run --rm --cpuset-cpus=0-3 -v $(pwd):/run martinclaus/swm
+docker run --rm --cpuset-cpus=0-3 -v $(pwd):/run martinclaus/swm:nczarr
 ```
 
 Note that the `--cpuset-cpus` option binds the container to a set of cores to ensure performance of shared memory computation.
